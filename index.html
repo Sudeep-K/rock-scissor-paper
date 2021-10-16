@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rock-scissor-paper</title>
+    <style>
+        body {
+        font-family : 'Cutive Mono';
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <p>Please open console to play the game!</p>
+    <p style="font-size: 12px;"><em>Note: CSS user-interface updating soon..</em></p>
+
+    <script>
+        // plays single round of game and displays custom message for the winner of single round
+        function playRound(playerSelection, computerSelection) {
+
+            if (playerSelection === "rock" && computerSelection === "paper") {
+                console.log("You Lose! Paper beats Rock");
+                return "lose";
+            } else if (playerSelection === "rock" && computerSelection === "scissor") {
+                console.log("You Win! Rock beats Scissor");
+                return "win";
+            } else if (playerSelection === "scissor" && computerSelection === "paper") {
+                console.log("You Win! Scissor beats Paper");
+                return "win";
+            } else if (playerSelection === "scissor" && computerSelection === "rock") {
+                console.log("You Lose! Rock beats Scissor");
+                return "lose";
+            } else if (playerSelection === "paper" && computerSelection === "rock") {
+                console.log("You Win! Paper beats Rock");
+                return "win";
+            } else if (playerSelection === "paper" && computerSelection === "scissor") {
+                console.log("You Lose! Scissor beats Paper");
+                return "lose";
+            } else if (playerSelection === computerSelection) {
+                console.log("Draw!");
+                return "draw";
+            } else {
+                console.log("Help! Something went horribly wrong...");
+            }
+        }
+        // plays 5 rounds of game and at last displays the overall winner of the game
+        function game() {
+            let playerScore = 0;
+            let computerScore = 0;
+            let result;
+
+            for (i=0; i<5; i++) {
+                // takes user-input using prompt
+                let playerSelection = prompt("Enter your weapon of choice, rock-scissor-paper: ", "");
+                playerSelection = playerSelection.toLowerCase();
+                console.log(`\nYou choose ${playerSelection}`);
+
+                // decides computer-input using random function
+                let computerSelection = Math.floor(Math.random() * 3 );
+                if (computerSelection === 0) {
+                    computerSelection = "rock";
+                } else if (computerSelection === 1) {
+                    computerSelection = "scissor";
+                } else if (computerSelection === 2) {
+                    computerSelection = "paper";
+                } else {
+                    console.log("The AI is broken help");
+                }
+                console.log(`Computer choose ${computerSelection}`);
+
+                // counts the times user wins or lose or even there is a draw
+                result = playRound(playerSelection, computerSelection);
+                if (result === "win") {
+                    playerScore += 1;
+                } else if (result === "lose") {
+                    computerScore += 1;
+                }
+            }
+            console.log(`\nPlayer wins ${playerScore} times and computer wins ${computerScore} times`);
+        }
+
+        // let the game begin
+        game();
+    </script>
+</body>
+</html>
