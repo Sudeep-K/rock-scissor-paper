@@ -11,11 +11,12 @@ rock-scissor-paper is a simple game playble from your own browser window
 
 - functions, variables, conditional statements in JS
 - implementation of important steps of problem solving
+- dynamic content editing using JS
+- using event handlers and query selector in JS
 
 ### 🌎 Future updates
 
->currently the project can be accessed only through command-line interface
->but we will revisit this project soon and add a Graphical User Interface with buttons and text
+>Update: added a Graphical User Interface with buttons and text
 
 > 🌐 check out the project now @[https://sudeep-k.github.io/rock-scissor-paper/]
 
