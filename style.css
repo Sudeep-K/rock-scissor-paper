@@ -1,0 +1,88 @@
+body {
+    font-family: "arial";
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.question {
+    border-bottom: 2px black solid;
+}
+
+.weapons{
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+@media (max-width: 800px) {
+    .weapons {
+      flex-direction: column;
+    }
+  }
+
+.rock-box, .scissor-box, .paper-box {
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.weapons button {
+    margin: 10px;
+    padding: 20px;
+    border-radius: 100px;
+    border: 1.5px black solid;
+    height: 20px;
+    width: 100px;
+    line-height: 4px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.weapons button:hover{
+    background-color: #6a9fb5;
+    transition: all 0.05s;
+}
+
+.rock-box img, .paper-box img {
+    width: 150px;
+}
+
+.scissor-box img {
+    width: 165px;
+}
+
+.score-board {
+    display: flex;
+    margin-left: -25px;
+}
+
+.player-score {
+    border-right: 2.5px black solid;
+    padding-right: 10px;
+    padding-top: 0px;
+}
+
+.player-score, .ai-score {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 0px;
+    height: 175px;
+}
+
+.ai-score {
+    margin-left: 10px;
+}
+
+.reset button {
+    margin: 25px 175px;
+    padding: 5px 20px;
+    background-color: red;
+    color: white;
+    border-radius: 50px;
+    border: 1.5px white solid;
+}
