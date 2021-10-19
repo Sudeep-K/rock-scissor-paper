@@ -17,8 +17,12 @@ body {
 }
 
 @media (max-width: 800px) {
-    .weapons {
-      flex-direction: column;
+    .rock-box img, .paper-box img {
+        width: 50px;
+    }
+    
+    .scissor-box img {
+        width: 65px;
     }
   }
 
